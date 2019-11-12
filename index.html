@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <!-- Käytin sitä html5 boiletplate juttua pohjana t: Anton -->
+  <meta charset="utf-8">
+  <title>Project 2</title>
+  <meta name="description" content="Movie Information APP Using Live XML-REST API from Finnkino">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Tein erikseen uuden CSS tiedoston
+        mihin ajattelin et laitetaan itse tekemät muotoilut ni helpompi löytää (stylesheet.css)-->
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+<!-- Silloin kun sivu lataa se kutsuu loadAreas funktiota main.js tiedostosta
+     joka hakee teatterit select listaan finnkinon XML tiedostosta / sivulta -->
+<body onload = "loadAreas()">
+  <h1>Project 2</h1>
+  <!-- TODO: keksi järkevä nimi select id:lle placeholderina id = "testi "-->
+  <!-- Kun käyttäjä valitsee teatterin selectistä se kutsuu loadSchedule funktiota
+       joka hakee valitusta teatterista kaikki elokuvat -->
+  <select id="testi" onchange ="loadSchedule()"></select>
+
+  <!-- TODO Keksi ul id:lle parempi englannin kielinen nimi ja ehkä muuta taulukoksi jos sopii paremmin  -->
+  <!-- Tähän lisätään finnkinon XML tiedostosta haetut elokuvat <li> tyyppeinä -->
+  <ul id="lista"></ul>
+
+
+  <!-- Javascript tiedostot  -->
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
