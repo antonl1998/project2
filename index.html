@@ -15,11 +15,13 @@
         mihin ajattelin et laitetaan itse tekemät muotoilut ni helpompi löytää (stylesheet.css)-->
   <link rel="stylesheet" href="css/stylesheet.css">
   <meta name="theme-color" content="#fafafa">
+  <link rel="icon" href="favicon.ico">
+
 </head>
 <!-- Silloin kun sivu lataa se kutsuu loadAreas funktiota main.js tiedostosta
      joka hakee teatterit select listaan finnkinon XML tiedostosta / sivulta -->
 <body onload = "loadAreas()">
-  <h1>Project 2</h1>
+  <h1>Leffaan tänään! Tai huomenna </h1>
   <!-- TODO: keksi järkevä nimi select id:lle placeholderina id = "testi "-->
   <!-- Kun käyttäjä valitsee teatterin selectistä se kutsuu loadSchedule funktiota
        joka hakee valitusta teatterista kaikki elokuvat -->
@@ -28,12 +30,15 @@
   <!-- TODO Keksi ul id:lle parempi englannin kielinen nimi ja ehkä muuta taulukoksi jos sopii paremmin  -->
   <!-- Tähän lisätään finnkinon XML tiedostosta haetut elokuvat <li> tyyppeinä -->
   <ul id="lista"></ul>
-  <h2> Moi hihi </h2> 
+ 
 
   <!-- Javascript tiedostot  -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"> </script>
 </body>
 
 </html>
