@@ -8,7 +8,7 @@ body {
     color: white;
 }
 
-#testi  {
+#theatreList  {
     display: block;
     margin: auto;
 }
@@ -21,9 +21,7 @@ table, tr, td {
 }
 #userInput {
   display: none;
+  margin: auto; 
 }
 
-#userInput {
-    display: none;
-  }
-  
+
