@@ -69,7 +69,7 @@ function loadSchedule() {
   }
 }
 
-
+ // Testataan saadaanko kuvat ladattua finnkinolta
 function loadimages() {
     //hakee kuvat finnkinon sivulta
     var pictures = new XMLHttpRequest();
@@ -84,7 +84,7 @@ function loadimages() {
         for(var i = 0; i < picName.length; i++) {
           //put pictures to array from xml 
           var image = picName[i].innerHTML;
-  
+          
           document.getElementById("kuvatesti").innerHTML += '<img src =' +image +'>';
         }
       }

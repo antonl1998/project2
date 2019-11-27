@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    color: white; /* ja samoin tähän joku parempi väri (tint) */
+    color: rgb(212, 192, 12); /* ja samoin tähän joku parempi väri (tint) */
 }
 
 body {
