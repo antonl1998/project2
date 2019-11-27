@@ -85,7 +85,7 @@ function loadimages() {
           //put pictures to array from xml 
           var image = picName[i].innerHTML;
           
-          document.getElementById("kuvatesti").innerHTML += '<img src =' +image +'>';
+          document.getElementById("Kuvatesti").innerHTML += '<img src =' +image +'>';
         }
       }
     }
