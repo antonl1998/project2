@@ -60,6 +60,7 @@ function loadSchedule() {
       var imageURLs = xmlDoc.getElementsByTagName("EventSmallImagePortrait");
       var timeTable = xmlDoc.getElementsByTagName("dttmShowStart");
       var rating = xmlDoc.getElementsByTagName("RatingImageUrl");
+      var contentDescriptors = xmlDoc.getElementsByTagName("ContentDescriptors");
       for(var i = 0; i < titles.length; i++) {
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
         //elokuvan nimi
@@ -72,7 +73,14 @@ function loadSchedule() {
         var time = time.replace(/-/g,".");
         var time = time.replace(/T/g," ");
         var time = time.replace(/:00/g," ");
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + time + '<br/>' + ratingIMG + '</td>';
+        //elokuvan varoitukset(niitä voi mahdollisesti olla monta joten käytetään looppia)
+        var contentDescriptor = contentDescriptors[i].getElementsByTagName("ContentDescriptor");
+        //oli jotain bugeja ni tällei onnistuin väliaikasesti kiertämään ne
+        var descriptionImages = "";
+        for(var j = 0; j < contentDescriptor.length; j++) {
+          descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
+        }
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + time + '<br/>' + ratingIMG + descriptionImages + '</td>';
       }
     }
   }
