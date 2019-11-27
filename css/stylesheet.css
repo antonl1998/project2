@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    color: white; /* ja samoin tähän joku parempi väri (tint) */
+}
+
+body {
+    background-color: black; /* joku nätti värishade tähän vielä */
+    color: white; 
+}
+
+#testi  {
+    display: block;
+    margin: auto;
+}
+
+
+/*turhia for now 
+.listcontainer {
+ 
+}
+.listcontainer ul {
+ 
+}
+.listcontainer li{
+   
+} */ 
