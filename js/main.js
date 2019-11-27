@@ -58,12 +58,21 @@ function loadSchedule() {
 
       var titles = xmlDoc.getElementsByTagName("Title");
       var imageURLs = xmlDoc.getElementsByTagName("EventSmallImagePortrait");
-
+      var timeTable = xmlDoc.getElementsByTagName("dttmShowStart");
+      var rating = xmlDoc.getElementsByTagName("RatingImageUrl");
       for(var i = 0; i < titles.length; i++) {
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
+        //elokuvan nimi
         var title = titles[i].innerHTML;
-
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '</td>';
+        //elokuvan aikataulu
+        var time = timeTable[i].innerHTML; 
+        //haetaan leffan rating
+        var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
+        //Korvataan ei toivotut merkit aikatauluun replace.functiolla
+        var time = time.replace(/-/g,".");
+        var time = time.replace(/T/g," ");
+        var time = time.replace(/:00/g," ");
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + time + '<br/>' + ratingIMG + '</td>';
       }
     }
   }
