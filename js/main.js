@@ -69,7 +69,7 @@ function loadSchedule() {
   }
 }
 
-
+/* Poistetaan turha funktio testinä
 function loadimages() {
     //hakee kuvat finnkinon sivulta
     var pictures = new XMLHttpRequest();
@@ -89,4 +89,8 @@ function loadimages() {
         }
       }
     }
+<<<<<<< HEAD
 }
+=======
+} */
+>>>>>>> 6a2dd9871f0ecd086eb52e12e8d80d07351482cf
