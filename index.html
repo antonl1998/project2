@@ -29,16 +29,34 @@
 
   <!-- TODO Keksi ul id:lle parempi englannin kielinen nimi ja ehkä muuta taulukoksi jos sopii paremmin  -->
   <!-- Tähän lisätään finnkinon XML tiedostosta haetut elokuvat <li> tyyppeinä -->
-  <ul id="lista"></ul>
- 
-
+  <div class="listcontainer">
+    <ul id="lista"></ul>
+  </div>
+  <div class="testcontainer">
+    <table id="testitaulu">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td id="Kuvatesti">Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+    </table>
+    <button style="border: none;" onclick= loadimages()> Click here! </button>
+  </div>
   <!-- Javascript tiedostot  -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"> </script>
-</body>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"> </script>
+  </body>
 
 </html>
