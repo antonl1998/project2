@@ -17,7 +17,10 @@ table, tr, td {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
-  
+
+}
+#userInput {
+  display: none;
 }
 
 #userInput {
