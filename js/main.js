@@ -31,7 +31,7 @@ function loadAreas() {
 
         //TODO: Vaihda tästä "testi" pois silloin kun keksit selectille hyvän id nimen
         //Creates new option for the select list and makes it's value theatreID(from xml file)
-        document.getElementById("testi").innerHTML +=  '<option value = ' + theatreID + '>' + theatreText + '</option>';
+        document.getElementById("theatreList").innerHTML +=  '<option value = ' + theatreID + '>' + theatreText + '</option>';
       }
     }
   }
@@ -45,7 +45,7 @@ function loadSchedule() {
   document.getElementById("list").innerHTML = "";
   //document.getElementById("lista").innerHTML = "";
   //Gets the ID of the selected theatre/option
-  var id = document.getElementById("testi").value;
+  var id = document.getElementById("theatreList").value;
   //Send request, uses the ID of the theatre to get data specific to that theatre
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET", "https://www.finnkino.fi/xml/Schedule/?area=" + id, true);
@@ -65,7 +65,7 @@ function loadSchedule() {
         //elokuvan nimi
         var title = titles[i].innerHTML;
         //elokuvan aikataulu
-        var time = timeTable[i].innerHTML; 
+        var time = timeTable[i].innerHTML;
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
         //Korvataan ei toivotut merkit aikatauluun replace.functiolla
