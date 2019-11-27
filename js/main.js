@@ -63,8 +63,7 @@ function loadSchedule() {
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
         var title = titles[i].innerHTML;
 
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td>';
-        document.getElementById("list").innerHTML += '<td>'+ title + '</td></tr>';
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '</td>';
       }
     }
   }
@@ -81,11 +80,11 @@ function loadimages() {
       if (pictures.readyState == 4 && pictures.status==200) {
         var picDoc = pictures.responseXML;
         var picName = picDoc.getElementsByTagName("EventSmallImagePortrait")
-  
+
         for(var i = 0; i < picName.length; i++) {
-          //put pictures to array from xml 
+          //put pictures to array from xml
           var image = picName[i].innerHTML;
-  
+
           document.getElementById("kuvatesti").innerHTML += '<img src =' +image +'>';
         }
       }

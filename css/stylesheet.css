@@ -5,22 +5,13 @@ h1 {
 
 body {
     background-color: black; /* joku nätti värishade tähän vielä */
-    color: white; 
+    color: white;
 }
 
 #testi  {
     display: block;
     margin: auto;
 }
-
-
-/*turhia for now 
-.listcontainer {
- 
+table, tr, td {
+  border: 1px solid white;
 }
-.listcontainer ul {
- 
-}
-.listcontainer li{
-   
-} */ 
