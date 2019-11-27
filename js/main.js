@@ -15,8 +15,6 @@ function loadAreas() {
   xmlhttp.open("GET", "https://www.finnkino.fi/xml/TheatreAreas/", true);
   xmlhttp.send();
 
-
-
   xmlhttp.onreadystatechange=function() {
     if(xmlhttp.readyState == 4 && xmlhttp.status==200) {
       //Save the response data in a  variable for easy processing
@@ -42,7 +40,8 @@ function loadAreas() {
    joka hakee finnkinon sivuilta kyseisen teatterin elokuva aikataulun */
 function loadSchedule() {
   //Empty the list so it won't print new data on top of existing data
-  document.getElementById("lista").innerHTML = "";
+  document.getElementById("list").innerHTML = "";
+  //document.getElementById("lista").innerHTML = "";
   //Gets the ID of the selected theatre/option
   var id = document.getElementById("testi").value;
   //Send request, uses the ID of the theatre to get data specific to that theatre
@@ -54,41 +53,17 @@ function loadSchedule() {
     if(xmlhttp.readyState == 4 && xmlhttp.status==200) {
       //Save the response data in a  variable for easy processing
       var xmlDoc = xmlhttp.responseXML;
-      //Use getElementsByTagName to dig out title and other things(it is in array)
 
-      //TODO: Lisää tähän muut tarvittavat asiat kuten aikataulut, kuvat, muuta infoa, osta lippu (linkki), jne
-
-      var imageURLs = xmlDoc.getElementsByTagName("EventSmallImagePortrait");
       var titles = xmlDoc.getElementsByTagName("Title");
-      //Loops through the list
+      var imageURLs = xmlDoc.getElementsByTagName("EventSmallImagePortrait");
+
       for(var i = 0; i < titles.length; i++) {
-        var titleText = titles[i].innerHTML;
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
-        //Creates <li> elements to <ul id="lista"> with movie titles
-        document.getElementById("lista").innerHTML +=  '<li>'+ imageURL + titleText + '</li>';
+        var title = titles[i].innerHTML;
+
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td>';
+        document.getElementById("list").innerHTML += '<td>'+ title + '</td></tr>';
       }
     }
   }
-}
-
-
-function loadimages() {
-    //hakee kuvat finnkinon sivulta
-    var pictures = new XMLHttpRequest();
-    pictures.open("GET", "https://www.finnkino.fi/xml/Events/", true );
-    pictures.send();
-    //send request
-    pictures.onreadystatechange=function() {
-      if (pictures.readyState == 4 && pictures.status==200) {
-        var picDoc = pictures.responseXML;
-        var picName = picDoc.getElementsByTagName("EventSmallImagePortrait")
-
-        for(var i = 0; i < picName.length; i++) {
-          //put pictures to array from xml
-          var image = picName[i].innerHTML;
-
-          document.getElementById("kuvatesti").innerHTML += '<img src =' +image +'>';
-        }
-      }
-    }
 }
