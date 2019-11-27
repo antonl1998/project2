@@ -60,11 +60,13 @@ function loadSchedule() {
       var rating = xmlDoc.getElementsByTagName("RatingImageUrl");
       for(var i = 0; i < titles.length; i++) {
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
+        //elokuvan nimi
         var title = titles[i].innerHTML;
+        //elokuvan aikataulu
         var time = timeTable[i].innerHTML; 
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
-        //Korvataan ei toivotut merkit replace.functiolla
+        //Korvataan ei toivotut merkit aikatauluun replace.functiolla
         var time = time.replace(/-/g,".");
         var time = time.replace(/T/g," ");
         var time = time.replace(/:00/g," ");
