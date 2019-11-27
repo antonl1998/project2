@@ -25,12 +25,12 @@
   <!-- TODO: keksi järkevä nimi select id:lle placeholderina id = "testi "-->
   <!-- Kun käyttäjä valitsee teatterin selectistä se kutsuu loadSchedule funktiota
        joka hakee valitusta teatterista kaikki elokuvat -->
-  <input id="userInput" type="text" placeholder="Etsi..." onkeyup="searchFunction()">
   <br/>
   <br/>
   <select id="theatreList" onchange ="loadSchedule()"></select>
-
-
+  <br/>
+  <br/>
+  <input id="userInput" type="text" placeholder="Hae elokuvia..." onkeyup="searchFunction()">
   <!-- TODO Keksi ul id:lle parempi englannin kielinen nimi ja ehkä muuta taulukoksi jos sopii paremmin  -->
   <!-- Tähän lisätään finnkinon XML tiedostosta haetut elokuvat <li> tyyppeinä -->
   <div class="testcontainer">
