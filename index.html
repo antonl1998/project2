@@ -25,7 +25,7 @@
   <!-- TODO: keksi järkevä nimi select id:lle placeholderina id = "testi "-->
   <!-- Kun käyttäjä valitsee teatterin selectistä se kutsuu loadSchedule funktiota
        joka hakee valitusta teatterista kaikki elokuvat -->
-  <input id="search" type="text" placeholder="Etsi...">     
+  <input id="userInput" type="text" placeholder="Etsi..." onkeyup="searchFunction()">
   <select id="testi" onchange ="loadSchedule()"></select>
 
 
