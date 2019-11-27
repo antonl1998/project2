@@ -39,6 +39,8 @@ function loadAreas() {
 /* Kun käyttäjä valitsee teatterin ni se kutsuu tätä funktiota
    joka hakee finnkinon sivuilta kyseisen teatterin elokuva aikataulun */
 function loadSchedule() {
+  //Shows search bar when user has chosen a theatre
+  document.getElementById("userInput").style.display="block";
   //Empty the list so it won't print new data on top of existing data
   document.getElementById("list").innerHTML = "";
   //document.getElementById("lista").innerHTML = "";

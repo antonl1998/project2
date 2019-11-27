@@ -15,3 +15,6 @@ body {
 table, tr, td {
   border: 1px solid white;
 }
+#userInput {
+  display: none;
+}
