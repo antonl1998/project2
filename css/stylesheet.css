@@ -19,3 +19,8 @@ table, tr, td {
   margin-bottom: 5px;
   
 }
+
+#userInput {
+    display: none;
+  }
+  
