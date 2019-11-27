@@ -15,8 +15,6 @@ function loadAreas() {
   xmlhttp.open("GET", "https://www.finnkino.fi/xml/TheatreAreas/", true);
   xmlhttp.send();
 
-
-
   xmlhttp.onreadystatechange=function() {
     if(xmlhttp.readyState == 4 && xmlhttp.status==200) {
       //Save the response data in a  variable for easy processing
@@ -93,4 +91,3 @@ function loadimages() {
 }
 =======
 } */
->>>>>>> 6a2dd9871f0ecd086eb52e12e8d80d07351482cf
