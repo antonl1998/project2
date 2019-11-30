@@ -69,13 +69,13 @@ function loadSchedule() {
         var xmlSchedule = timeTable[i].innerHTML;
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
-        //parsitaan xml:stä vain tarvittavat aikataulutiedot 
-        var time = xmlSchedule.slice(11 , 16); 
+        //parsitaan xml:stä vain tarvittavat aikataulutiedot
+        var time = xmlSchedule.slice(11 , 16);
         var date = xmlSchedule.slice(8, 10);
         var month = xmlSchedule.slice(5,7);
         var year = xmlSchedule.slice(0,4);
-        
-        
+
+
         //elokuvan varoitukset(niitä voi mahdollisesti olla monta joten käytetään looppia)
         var contentDescriptor = contentDescriptors[i].getElementsByTagName("ContentDescriptor");
         //oli jotain bugeja ni tällei onnistuin väliaikasesti kiertämään ne
@@ -100,9 +100,11 @@ function searchFunction() {
     td = tr[i].getElementsByTagName("td")[1];
     txtValue = td.innerHTML;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      tr[i].style.display = "";
+      //tr[i].style.display = "";
+      $("#list").find('tr').eq(i).fadeIn(1000);
     } else {
-      tr[i].style.display = "none";
+      //tr[i].style.display = "none";
+      $("#list").find('tr').eq(i).fadeOut(1000);
     }
   }
 
