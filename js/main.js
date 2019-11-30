@@ -66,22 +66,14 @@ function loadSchedule() {
         //elokuvan nimi
         var title = titles[i].innerHTML;
         //elokuvan aikataulu
-        var time = timeTable[i].innerHTML;
+        var xmlSchedule = timeTable[i].innerHTML;
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
-        //Korvataan ei toivotut merkit aikatauluun replace.functiolla
-        
-        
-        var time = time.replace(/-/g,".");
-        var time = time.replace(/T/g," ");
-        /*
-        var time = time.replace(/:00/g,"");
-        var time = time.replace(/:00:00/g,":00");
-        var time = time.replace(/0:00/g,"0");
-        var time = time.replace(/5:00/g,"50"); */
-
-        var time = time.slice(0, 16);
-        
+        //parsitaan xml:stä vain tarvittavat aikataulutiedot 
+        var time = xmlSchedule.slice(11 , 16); 
+        var date = xmlSchedule.slice(8, 10);
+        var month = xmlSchedule.slice(5,7);
+        var year = xmlSchedule.slice(0,4);
         
         
         //elokuvan varoitukset(niitä voi mahdollisesti olla monta joten käytetään looppia)
@@ -91,7 +83,7 @@ function loadSchedule() {
         for(var j = 0; j < contentDescriptor.length; j++) {
           descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
         }
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + time + '<br/>' + ratingIMG + descriptionImages + '</td>';
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + ratingIMG + descriptionImages + '</td>';
       }
     }
   }
