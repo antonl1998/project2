@@ -30,6 +30,20 @@ body {
 #theatreList  {
     display: block;
     margin: auto;
+    background-color: #fff;
+    color: #070707;
+    height: 40px;
+    font-size: 13px;
+    width: 350px;
+}
+#userInput {
+  display: none;
+  margin: auto;
+  background-color: #fff;
+  color: #070707;
+  height: 40px;
+  font-size: 13px;
+  width: 350px;
 }
 table, tr, td {
   margin: auto;
@@ -40,14 +54,6 @@ table, tr, td {
   border: 5px solid ; border-color: rgb(0, 0, 0);
 }
 
-
-
-#userInput {
-  display: none;
-  margin: auto;
-}
-
-
 footer {
  text-align: center;
  font-family: sans-serif;
@@ -55,5 +61,20 @@ footer {
  position: bottom;
 }
 #list {
-  width: 100%;
+  width: 60%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+}
+#list td:first-child {
+  width: auto;
+}
+#list td:nth-child(2) {
+  text-align: left;
+}
+
+@media screen and (max-width: 500px) {
+  #list {
+    width: 100%;
+  }
 }
