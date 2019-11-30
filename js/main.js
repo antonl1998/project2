@@ -88,7 +88,7 @@ function loadSchedule() {
         for(var j = 0; j < contentDescriptor.length; j++) {
           descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
         }
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + "Kesto: " + xmlDuration + " minuuttia <br/> <br/>" + ratingIMG + descriptionImages + '</td>';
+        document.getElementById("list").innerHTML += '<tr><td id="firstcolum">'+ imageURL + '</td><td id="secondcolum">' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + "Kesto: " + xmlDuration + " minuuttia <br/> <br/>" + ratingIMG + descriptionImages + '</td>';
       }
     }
   }
