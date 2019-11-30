@@ -73,7 +73,7 @@ function loadSchedule() {
         //parsitaan xml:stä vain tarvittavat aikataulutiedot
         var time = xmlSchedule.slice(11 , 16);
         var xmlDuration = duration[i].innerHTML;
-        
+
         //parsitaan xml:stä vain tarvittavat aikataulutiedot
         var time = xmlSchedule.slice(11, 16);
         var date = xmlSchedule.slice(8, 10);
