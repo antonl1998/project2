@@ -70,9 +70,20 @@ function loadSchedule() {
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
         //Korvataan ei toivotut merkit aikatauluun replace.functiolla
+        
+        
         var time = time.replace(/-/g,".");
         var time = time.replace(/T/g," ");
-        var time = time.replace(/:00/g," ");
+        /*
+        var time = time.replace(/:00/g,"");
+        var time = time.replace(/:00:00/g,":00");
+        var time = time.replace(/0:00/g,"0");
+        var time = time.replace(/5:00/g,"50"); */
+
+        var time = time.slice(0, 16);
+        
+        
+        
         //elokuvan varoitukset(niitä voi mahdollisesti olla monta joten käytetään looppia)
         var contentDescriptor = contentDescriptors[i].getElementsByTagName("ContentDescriptor");
         //oli jotain bugeja ni tällei onnistuin väliaikasesti kiertämään ne
