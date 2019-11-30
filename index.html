@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-  <!-- Käytin sitä html5 boiletplate juttua pohjana t: Anton -->
   <meta charset="utf-8">
   <title>Project 2</title>
   <meta name="description" content="Movie Information APP Using Live XML-REST API from Finnkino">
@@ -25,16 +24,11 @@
     <img src = "logo.png">
     <h1>innkinon Elokuvat</h1>
   </div>
-  <!-- TODO: keksi järkevä nimi select id:lle placeholderina id = "testi "-->
-  <!-- Kun käyttäjä valitsee teatterin selectistä se kutsuu loadSchedule funktiota
-       joka hakee valitusta teatterista kaikki elokuvat -->
   <br/>
   <br/>
   <select id="theatreList" onchange ="loadSchedule()"></select>
   <br/>
   <input id="userInput" type="text" placeholder="Hae elokuvia..." onkeyup="searchFunction()">
-  <!-- TODO Keksi ul id:lle parempi englannin kielinen nimi ja ehkä muuta taulukoksi jos sopii paremmin  -->
-  <!-- Tähän lisätään finnkinon XML tiedostosta haetut elokuvat <li> tyyppeinä -->
   <div class="testcontainer">
     <br/>
     <br/>

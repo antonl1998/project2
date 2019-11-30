@@ -1,13 +1,3 @@
-/*
-  MUITA IDEOITA/AJATUKSIA KUN MUUT TEHTY JOS ON MOTIVAATIOTA:
-    -Yleisestikki vois suunnitella jonkinlaisen ulkoasun ja tehdä CSS paskat pois alta
-    -Filtteröinti (esim hae vaikka elokuvan nimeä tai tietyn päivän elokuvat)
-    -Joku favourites / movies to watch systeemi, johon voisi tallentaa elokuvia
-     joista on kiinnostunut (voisi toimia jollain cookies / local storage systeemillä)
-    -Random movie generator? Valitsee random elokuvan (idk?)
-    -"hauska" itse tehty finnkinon logon tyylinen -juttu jossa vaikka joku oma nimi / kuva / muu juttu
-*/
-
 //Silloin kun body latautuu se hakee finnkinon teatterit ja laittaa ne select listaan
 function loadAreas() {
   //Send request
@@ -29,7 +19,6 @@ function loadAreas() {
         var theatreText = theatreNames[i].innerHTML;
         var theatreID = theatreIDs[i].innerHTML;
 
-        //TODO: Vaihda tästä "testi" pois silloin kun keksit selectille hyvän id nimen
         //Creates new option for the select list and makes it's value theatreID(from xml file)
         document.getElementById("theatreList").innerHTML +=  '<option value = ' + theatreID + '>' + theatreText + '</option>';
       }
@@ -79,10 +68,8 @@ function loadSchedule() {
         var month = xmlSchedule.slice(5,7);
         var year = xmlSchedule.slice(0,4);
 
-
         //elokuvan varoitukset(niitä voi mahdollisesti olla monta joten käytetään looppia)
         var contentDescriptor = contentDescriptors[i].getElementsByTagName("ContentDescriptor");
-        //oli jotain bugeja ni tällei onnistuin väliaikasesti kiertämään ne
         var descriptionImages = "";
         for(var j = 0; j < contentDescriptor.length; j++) {
           descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
@@ -113,30 +100,4 @@ function searchFunction() {
       $("#list").find('tr').eq(i).fadeOut(1000);
     }
   }
-
-
 }
-/* Poistetaan turha funktio testinä
-function loadimages() {
-    //hakee kuvat finnkinon sivulta
-    var pictures = new XMLHttpRequest();
-    pictures.open("GET", "https://www.finnkino.fi/xml/Events/", true );
-    pictures.send();
-    //send request
-    pictures.onreadystatechange=function() {
-      if (pictures.readyState == 4 && pictures.status==200) {
-        var picDoc = pictures.responseXML;
-        var picName = picDoc.getElementsByTagName("EventSmallImagePortrait")
-
-        for(var i = 0; i < picName.length; i++) {
-          //put pictures to array from xml
-          var image = picName[i].innerHTML;
-
-          document.getElementById("kuvatesti").innerHTML += '<img src =' +image +'>';
-        }
-      }
-    }
-<<<<<<< HEAD
-}
-=======
-} */
