@@ -70,8 +70,7 @@ function loadSchedule() {
         var xmlSchedule = timeTable[i].innerHTML;
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
-        //parsitaan xml:stä vain tarvittavat aikataulutiedot
-        var time = xmlSchedule.slice(11 , 16);
+       //elokuvan kesto
         var xmlDuration = duration[i].innerHTML;
 
         //parsitaan xml:stä vain tarvittavat aikataulutiedot
