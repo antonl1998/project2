@@ -88,7 +88,9 @@ function loadSchedule() {
         for(var j = 0; j < contentDescriptor.length; j++) {
           descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
         }
+        $("#list").hide();
         document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + "Kesto: " + xmlDuration + " minuuttia <br/> <br/>" + ratingIMG + descriptionImages + '</td>';
+        $("#list").show(500);
       }
     }
   }
