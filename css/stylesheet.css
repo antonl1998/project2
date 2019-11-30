@@ -36,7 +36,7 @@ body {
     color: #070707;
     height: 40px;
     font-size: 13px;
-    width: 350px;
+    width: 354px;
 }
 #userInput {
   display: none;
@@ -63,7 +63,7 @@ footer {
  position: bottom;
 }
 #list {
-  width: 60%;
+  width: 390px;
   text-align: center;
   margin-left:auto;
   margin-right:auto;
