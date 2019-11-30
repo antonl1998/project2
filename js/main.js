@@ -89,7 +89,7 @@ function loadSchedule() {
         }
         $("#list").hide();
         document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + "Kesto: " + xmlDuration + " minuuttia <br/> <br/>" + ratingIMG + descriptionImages + '</td>';
-        $("#list").show(500);
+        $("#list").fadeIn(500);
       }
     }
   }
