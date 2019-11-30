@@ -63,7 +63,7 @@ function loadSchedule() {
       var contentDescriptors = xmlDoc.getElementsByTagName("ContentDescriptors");
       var duration = xmlDoc.getElementsByTagName("LengthInMinutes")
       for(var i = 0; i < titles.length; i++) {
-        var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
+        var imageURL = '<img class="images" src="' + imageURLs[i].innerHTML + '">';
         //elokuvan nimi
         var title = titles[i].innerHTML;
         //elokuvan aikataulu

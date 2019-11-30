@@ -15,19 +15,32 @@ body {
     margin: auto;
 }
 table, tr, td {
-  border: 2px solid; color: rgb(233, 233, 230);
+  border: 2px solid; color: rgb(218, 218, 214);
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif ;
 
+} 
+ 
+
+td {
+  padding-left: 2px;
+  padding-right: 2px;
+} 
+.images{
+  padding: 0;
 }
+
 #userInput {
   display: none;
   margin: auto; 
 }
 #list {
   
+}
+footer {
+ 
 }
 
