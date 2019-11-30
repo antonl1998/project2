@@ -61,6 +61,7 @@ function loadSchedule() {
       var timeTable = xmlDoc.getElementsByTagName("dttmShowStart");
       var rating = xmlDoc.getElementsByTagName("RatingImageUrl");
       var contentDescriptors = xmlDoc.getElementsByTagName("ContentDescriptors");
+      var duration = xmlDoc.getElementsByTagName("LengthInMinutes")
       for(var i = 0; i < titles.length; i++) {
         var imageURL = '<img src="' + imageURLs[i].innerHTML + '">';
         //elokuvan nimi
@@ -69,8 +70,12 @@ function loadSchedule() {
         var xmlSchedule = timeTable[i].innerHTML;
         //haetaan leffan rating
         var ratingIMG = '<img src="' + rating[i].innerHTML + '">';
+        
+        var xmlDuration = duration[i].innerHTML;
+        
+        
         //parsitaan xml:stä vain tarvittavat aikataulutiedot 
-        var time = xmlSchedule.slice(11 , 16); 
+        var time = xmlSchedule.slice(11, 16); 
         var date = xmlSchedule.slice(8, 10);
         var month = xmlSchedule.slice(5,7);
         var year = xmlSchedule.slice(0,4);
@@ -83,7 +88,7 @@ function loadSchedule() {
         for(var j = 0; j < contentDescriptor.length; j++) {
           descriptionImages += '<img src="' + contentDescriptor[j].getElementsByTagName("ImageURL")[0].innerHTML + '">';
         }
-        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + ratingIMG + descriptionImages + '</td>';
+        document.getElementById("list").innerHTML += '<tr><td>'+ imageURL + '</td><td>' + title + '<br/>' + date + "."+ month+ "." + year + " " + time + '<br/>' + "Kesto: " + xmlDuration + " minuuttia <br/> <br/>" + ratingIMG + descriptionImages + '</td>';
       }
     }
   }
